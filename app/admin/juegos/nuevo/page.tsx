@@ -1,0 +1,3 @@
+import { requireAdmin } from "@/lib/admin"; import { AdminNav } from "@/components/AdminNav"; import { AdminGameForm } from "@/components/AdminGameForm"; import { createGame } from "@/app/admin/actions";
+type Search = Promise<{ error?: string }>;
+export default async function NuevoJuego({ searchParams }: { searchParams: Search }) { await requireAdmin("/admin/juegos/nuevo"); const params = await searchParams; return <div className="shell pageStack"><section className="adminTitleRow"><div><span className="eyebrow">CATÁLOGO</span><h1>Nuevo juego</h1></div></section><AdminNav />{params.error && <p className="notice error">{params.error}</p>}<AdminGameForm action={createGame} submitLabel="Guardar juego" /></div>; }

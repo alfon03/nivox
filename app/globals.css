@@ -1,0 +1,1055 @@
+:root {
+  --bg: #07101d;
+  --bg-2: #0a1424;
+  --panel: #0e192b;
+  --panel-2: #13223a;
+  --text: #f7f9ff;
+  --muted: #93a4bd;
+  --line: #20304a;
+  --purple: #7c4dff;
+  --purple-2: #a36dff;
+  --blue: #4d8dff;
+  --green: #3ddc97;
+  --gold: #ffc857;
+  --shadow: 0 18px 60px rgba(0,0,0,.26);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: radial-gradient(circle at 20% -10%, #151d3a 0, transparent 30%), var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; }
+button { color: inherit; }
+.shell { width: min(1440px, calc(100% - 32px)); margin: 0 auto; }
+.pageStack { display: grid; gap: 24px; padding: 28px 0 56px; }
+
+.siteHeader { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(16px); background: rgba(6, 14, 25, .9); border-bottom: 1px solid var(--line); }
+.topbar { min-height: 72px; display: grid; grid-template-columns: 210px 1fr auto; align-items: center; gap: 24px; }
+.brand { display: flex; gap: 10px; align-items: center; font-size: 28px; font-weight: 900; letter-spacing: -.8px; }
+.brandMark { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px 6px 12px 6px; background: linear-gradient(135deg, var(--purple-2), #3c21d9); box-shadow: 0 0 28px rgba(124,77,255,.45); transform: skew(-8deg); }
+.searchBox { height: 44px; display: flex; align-items: center; gap: 10px; padding: 0 16px; background: rgba(16,28,48,.9); border: 1px solid #30425e; border-radius: 999px; color: var(--muted); }
+.searchBox input { width: 100%; background: transparent; border: 0; outline: 0; color: var(--text); }
+.profilePill { padding: 10px 14px; border: 1px solid var(--line); background: #111d31; border-radius: 999px; }
+.nav { display: flex; gap: 28px; min-height: 48px; align-items: center; overflow-x: auto; scrollbar-width: none; }
+.nav a { color: #c7d2e6; font-weight: 650; font-size: 14px; white-space: nowrap; }
+.nav a:hover { color: var(--purple-2); }
+
+.heroGrid { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(280px, .8fr); gap: 18px; }
+.heroCard { min-height: 440px; padding: 24px; border: 1px solid #3c2d62; border-radius: 22px; overflow: hidden; position: relative; background:
+ linear-gradient(90deg, rgba(7,12,25,.92) 0%, rgba(7,12,25,.6) 45%, rgba(7,12,25,.15) 100%),
+ radial-gradient(circle at 82% 28%, rgba(255,106,155,.7), transparent 25%),
+ radial-gradient(circle at 70% 80%, rgba(76,97,255,.75), transparent 30%),
+ linear-gradient(135deg, #2a1646, #0d2a4d 55%, #2f153c);
+ box-shadow: var(--shadow);
+}
+.heroCard::after { content: "NIVOX"; position: absolute; right: -20px; bottom: -38px; font-weight: 1000; font-size: clamp(80px, 12vw, 170px); color: rgba(255,255,255,.045); letter-spacing: -8px; }
+.heroContent { position: absolute; left: 28px; bottom: 34px; max-width: 720px; z-index: 2; }
+.heroKicker { color: #d7c9ff; font-weight: 750; }
+.heroContent h1, .pageHero h1, .communityHero h1, .profileHero h1, .gameHero h1 { margin: 8px 0 12px; font-size: clamp(34px, 5vw, 68px); line-height: .98; letter-spacing: -2px; }
+.heroContent p { max-width: 650px; color: #d0d8e8; font-size: 18px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 850; letter-spacing: .11em; padding: 7px 10px; border-radius: 999px; background: rgba(124,77,255,.2); color: #cbbcff; border: 1px solid rgba(163,109,255,.4); }
+.heroButtons { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
+.primaryBtn, .ghostBtn { display: inline-flex; justify-content: center; align-items: center; min-height: 42px; padding: 0 16px; border-radius: 10px; border: 1px solid transparent; font-weight: 800; }
+.primaryBtn { background: linear-gradient(135deg, var(--purple), #5b31e8); color: white; }
+.ghostBtn { background: #121f34; border-color: #30425f; color: #edf2fb; }
+button.primaryBtn, button.ghostBtn { cursor: pointer; }
+
+.panel { background: linear-gradient(180deg, rgba(16,29,49,.96), rgba(10,21,37,.96)); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); }
+.trending { padding: 18px; }
+.sectionTitle { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 14px; }
+.sectionTitle h2 { margin: 0; font-size: 20px; }
+.sectionTitle a, .sectionTitle span { color: #9a7bff; font-size: 13px; }
+.trendRow { display: grid; grid-template-columns: 34px 1fr auto; gap: 10px; align-items: center; padding: 15px 0; border-top: 1px solid var(--line); }
+.trendRow b { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; background: #17253c; color: #b8c7dc; }
+.trendRow small { color: var(--gold); }
+
+.gameGrid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+.gameGrid.large { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.gameCard { min-width: 0; overflow: hidden; border-radius: 16px; border: 1px solid var(--line); background: var(--panel); transition: transform .2s ease, border-color .2s ease; }
+.gameCard:hover { transform: translateY(-4px); border-color: #6d53c6; }
+.gameArt { aspect-ratio: 3 / 4; display: grid; place-items: center; position: relative; overflow: hidden; background: #111827; }
+.gameArt::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, transparent 58%, rgba(4,8,14,.42)); }
+.gameArt.hasCover::after { background: linear-gradient(180deg, transparent 68%, rgba(4,8,14,.28)); }
+.gameArt > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.gameArtFallback { position: relative; z-index: 2; height: 100%; width: 100%; padding: 24px 20px; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; }
+.gameArtFallback .gameArtBrand { font-size: 11px; letter-spacing: .18em; font-weight: 900; opacity: .62; }
+.gameArtFallback strong { font-size: clamp(21px, 2.2vw, 31px); line-height: .98; letter-spacing: -.045em; max-width: 14ch; }
+.gameArtFallback small { color: rgba(255,255,255,.72); font-size: 12px; }
+.game-sunset .gameArt, .gameHero.game-sunset { background: radial-gradient(circle at 80% 20%, #ff8fb1, transparent 24%), radial-gradient(circle at 30% 60%, #ff854f, transparent 35%), linear-gradient(135deg, #54266e, #122a54); }
+.game-gold .gameArt { background: radial-gradient(circle at 50% 45%, #f7c45b, transparent 15%), linear-gradient(135deg, #151815, #5f4e17); }
+.game-sky .gameArt { background: radial-gradient(circle at 55% 40%, #d9ffff, transparent 15%), linear-gradient(135deg, #2b626e, #9acbd5); }
+.game-ember .gameArt { background: radial-gradient(circle at 65% 30%, #ff8d4a, transparent 20%), linear-gradient(135deg, #3b1b2b, #7c342b); }
+.game-crimson .gameArt { background: radial-gradient(circle at 50% 40%, #efc9e7, transparent 12%), linear-gradient(135deg, #351124, #8b123f); }
+.gameCardBody { padding: 14px; }
+.gameCardBody h3 { margin: 0 0 5px; font-size: 16px; }
+.gameCardBody p { margin: 0; color: var(--muted); font-size: 13px; }
+.gameMeta { display: flex; justify-content: space-between; gap: 8px; margin-top: 12px; color: #c9d5e7; font-size: 12px; }
+.gameMeta span:first-child { color: var(--gold); }
+
+.twoCol { display: grid; grid-template-columns: 1.4fr .8fr; gap: 18px; }
+.sectionPanel { padding: 18px; }
+.newsGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.newsCard { min-height: 150px; padding: 16px; border-radius: 14px; background: linear-gradient(145deg, #13233d, #0d1828); border: 1px solid #263854; }
+.newsCard h3 { margin: 12px 0; line-height: 1.2; }
+.newsCard p, .newsCard small { margin: 0; color: var(--muted); }
+.tag { display: inline-flex; align-items: center; width: fit-content; padding: 5px 8px; border-radius: 999px; background: rgba(124,77,255,.17); color: #bdabff; font-size: 11px; font-weight: 800; }
+.guideList { display: grid; gap: 5px; }
+.guideList article { display: grid; grid-template-columns: 42px 1fr; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); }
+.guideList h3 { font-size: 15px; margin: 0 0 3px; }
+.guideList p { font-size: 12px; color: var(--muted); margin: 0; }
+.guideIcon { width: 38px; height: 38px; border-radius: 10px; background: #1b2a43; display: grid; place-items: center; color: #bdabff; }
+
+.communityGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.postCard { padding: 16px; border-radius: 15px; border: 1px solid var(--line); background: #0c1829; }
+.postUser { display: flex; align-items: center; gap: 9px; }
+.postUser > div { display: grid; gap: 2px; }
+.postUser small { color: var(--muted); }
+.postUser .tag { margin-left: auto; }
+.avatar { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, #e36bbb, var(--purple)); font-weight: 900; }
+.postCard h3, .postCard h2 { margin: 14px 0 8px; }
+.postCard p { color: #b8c5d8; line-height: 1.55; }
+.postMeta { color: #9aaac0; border-top: 1px solid var(--line); padding-top: 12px; font-size: 13px; }
+.premiumBanner { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 28px; border: 1px solid #6f46e8; border-radius: 20px; background: radial-gradient(circle at 92% 20%, rgba(178,103,255,.35), transparent 20%), linear-gradient(135deg, #201348, #0d1730); }
+.premiumBanner h2 { font-size: 34px; margin: 10px 0 4px; }
+.premiumBanner p { color: #c4cce0; }
+.premiumBanner button { min-width: 140px; height: 42px; border: 0; border-radius: 10px; background: #8d65ff; color: white; font-weight: 800; opacity: .75; }
+
+.pageHero, .communityHero, .profileHero { border: 1px solid var(--line); border-radius: 22px; background: radial-gradient(circle at 82% 20%, rgba(124,77,255,.3), transparent 25%), linear-gradient(135deg, #0f1b31, #101326); box-shadow: var(--shadow); }
+.pageHero.compact { padding: 48px; }
+.pageHero.compact h1 { font-size: clamp(42px, 6vw, 72px); }
+.pageHero p, .communityHero p, .profileHero p { color: #b9c5d8; font-size: 17px; max-width: 720px; }
+.contentList { display: grid; gap: 14px; }
+.articleRow { display: grid; grid-template-columns: 240px 1fr; gap: 20px; padding: 14px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); }
+.articleRow h2 { margin: 8px 0; }
+.articleRow p { color: #aebbd0; }
+.articleRow small { color: var(--muted); }
+.thumb { min-height: 160px; border-radius: 12px; }
+.thumb-0 { background: linear-gradient(135deg, #e15d77, #522581); }
+.thumb-1 { background: linear-gradient(135deg, #2057a9, #1ca283); }
+.thumb-2 { background: linear-gradient(135deg, #aa7722, #401b60); }
+.thumb-3 { background: linear-gradient(135deg, #4d566b, #111725); }
+.filters { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 4px; }
+.filters button, .libraryActions button { border: 1px solid #2d405e; border-radius: 999px; padding: 10px 15px; background: #101c2f; cursor: pointer; white-space: nowrap; }
+.filters button.active, .libraryActions button.active { background: var(--purple); border-color: var(--purple); }
+
+.gameHero { min-height: 380px; position: relative; overflow: hidden; border-radius: 22px; border: 1px solid #503b76; }
+.gameHero::after { content: "VI"; position: absolute; right: 5%; top: 50%; transform: translateY(-50%); font-size: min(24vw, 280px); font-weight: 1000; color: rgba(255,255,255,.09); letter-spacing: -.1em; }
+.gameHeroOverlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: end; padding: 32px; background: linear-gradient(90deg, rgba(5,10,18,.9), rgba(5,10,18,.2)); z-index: 2; }
+.gameHeroOverlay h1 { font-size: clamp(42px, 7vw, 92px); max-width: 800px; }
+.scorePill { display: inline-flex; width: fit-content; gap: 8px; align-items: baseline; margin-top: 14px; padding: 10px 14px; border-radius: 12px; background: rgba(5,10,18,.68); border: 1px solid #6e4ad0; font-size: 28px; font-weight: 900; }
+.scorePill small { color: #c7b8ff; font-size: 11px; }
+.libraryActions { display: flex; gap: 10px; flex-wrap: wrap; }
+.gameDetailGrid { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 18px; }
+.lead { color: #bfcbdd; font-size: 16px; line-height: 1.7; }
+.detailChips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.detailChips span { border: 1px solid #2c3e59; background: #111e32; border-radius: 999px; padding: 8px 11px; color: #cbd5e4; font-size: 13px; }
+.sideFacts { padding: 18px; }
+.sideFacts h2 { margin-top: 0; }
+.sideFacts dl { margin: 0; }
+.sideFacts dl div { display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-top: 1px solid var(--line); }
+.sideFacts dt { color: var(--muted); }
+.sideFacts dd { margin: 0; text-align: right; }
+.miniPost { padding: 12px 0; border-top: 1px solid var(--line); }
+.miniPost p { margin: 6px 0; color: #c2cee0; }
+.miniPost small { color: var(--muted); }
+
+.guideCards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.bigGuide { display: grid; grid-template-columns: 180px 1fr; gap: 18px; padding: 14px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); }
+.bigGuide h2 { margin: 10px 0 6px; }
+.bigGuide p, .bigGuide small { color: var(--muted); }
+.guideCover { min-height: 150px; border-radius: 12px; }
+.cover-0 { background: linear-gradient(135deg, #7c5b1a, #171d15); }
+.cover-1 { background: linear-gradient(135deg, #34757b, #0e243c); }
+.cover-2 { background: linear-gradient(135deg, #79422d, #241522); }
+.cover-3 { background: linear-gradient(135deg, #20549c, #111a33); }
+
+.communityHero { display: flex; justify-content: space-between; align-items: end; gap: 24px; padding: 42px; }
+.feed { max-width: 880px; display: grid; gap: 14px; margin: 0 auto; width: 100%; }
+.feedPost { padding: 20px; }
+.communityMedia { min-height: 220px; margin: 14px 0; display: grid; place-items: center; border-radius: 14px; font-weight: 1000; letter-spacing: .1em; color: rgba(255,255,255,.8); }
+.media-0 { background: radial-gradient(circle at 70% 30%, #ff9a76, transparent 20%), linear-gradient(135deg, #4d1f57, #151d4e); }
+.media-1 { background: radial-gradient(circle at 40% 50%, #34b1e4, transparent 16%), linear-gradient(135deg, #171b4d, #5a124c); }
+.media-2 { background: radial-gradient(circle at 55% 40%, #eab464, transparent 15%), linear-gradient(135deg, #322518, #15171c); }
+
+.profileHero { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 20px; padding: 34px; }
+.profileAvatar { width: 92px; height: 92px; display: grid; place-items: center; border-radius: 50%; font-size: 38px; font-weight: 1000; background: linear-gradient(135deg, #dd65bd, var(--purple)); border: 4px solid #b79bff; }
+.profileHero h1 { font-size: 42px; }
+.statsGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.statsGrid > div { display: grid; gap: 3px; text-align: center; padding: 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+.statsGrid b { font-size: 28px; }
+.statsGrid span { color: var(--muted); font-size: 13px; }
+
+.footer { margin-top: 40px; padding: 34px 0; border-top: 1px solid var(--line); background: #050c16; color: #9eabc0; }
+.footerGrid { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 32px; }
+.footerGrid strong { color: white; font-size: 22px; }
+.footerGrid p { margin-bottom: 0; }
+.footerLinks { display: flex; gap: 18px; }
+.footerLegal { font-size: 12px; }
+
+@media (max-width: 1100px) {
+  .gameGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .gameGrid.large { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .heroGrid, .twoCol, .gameDetailGrid { grid-template-columns: 1fr; }
+  .communityGrid { grid-template-columns: 1fr 1fr; }
+  .trending { min-height: unset; }
+}
+
+@media (max-width: 760px) {
+  .shell { width: min(100% - 20px, 1440px); }
+  .topbar { grid-template-columns: 1fr auto; min-height: 62px; gap: 10px; }
+  .brand { font-size: 22px; }
+  .brandMark { width: 34px; height: 34px; }
+  .searchBox { grid-column: 1 / -1; grid-row: 2; margin-bottom: 10px; }
+  .profilePill { font-size: 12px; }
+  .nav { gap: 18px; }
+  .pageStack { padding-top: 18px; gap: 18px; }
+  .heroCard { min-height: 480px; }
+  .heroContent { left: 20px; right: 20px; bottom: 24px; }
+  .heroContent h1 { font-size: 42px; }
+  .gameGrid, .gameGrid.large { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .newsGrid, .communityGrid, .guideCards { grid-template-columns: 1fr; }
+  .articleRow, .bigGuide { grid-template-columns: 1fr; }
+  .thumb { min-height: 190px; }
+  .communityHero, .premiumBanner { align-items: stretch; flex-direction: column; }
+  .profileHero { grid-template-columns: auto 1fr; }
+  .profileHero .ghostBtn { grid-column: 1 / -1; }
+  .statsGrid { grid-template-columns: repeat(2, 1fr); }
+  .footerGrid { grid-template-columns: 1fr; }
+  .footerLinks { flex-wrap: wrap; }
+  .gameHero { min-height: 430px; }
+  .gameHeroOverlay { padding: 22px; }
+}
+
+@media (max-width: 460px) {
+  .gameGrid, .gameGrid.large { grid-template-columns: 1fr; }
+  .pageHero.compact, .communityHero { padding: 28px; }
+  .heroCard { min-height: 520px; }
+  .heroButtons > * { width: 100%; }
+  .profileHero { grid-template-columns: 1fr; text-align: center; }
+  .profileAvatar { margin: 0 auto; }
+}
+
+/* NIVOX v0.2 — auth, cuentas y administración */
+.accountActions { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+.accountActions form { margin: 0; }
+.headerLogout, .adminPill { border: 1px solid var(--line); background: transparent; color: #aebbd0; padding: 9px 11px; border-radius: 999px; cursor: pointer; font-size: 12px; font-weight: 750; }
+.headerLogout:hover, .adminPill:hover { color: white; border-color: #5d4a94; }
+.adminPill { color: #c9b8ff; background: rgba(124,77,255,.1); }
+.authShell { min-height: calc(100vh - 180px); display: grid; place-items: center; padding: 52px 0; }
+.authCard { width: min(100%, 560px); padding: clamp(24px, 5vw, 42px); border-radius: 22px; box-shadow: var(--shadow); }
+.authCard h1 { margin: 8px 0 12px; font-size: clamp(34px, 5vw, 54px); line-height: 1; letter-spacing: -1.8px; }
+.authForm { display: grid; gap: 16px; margin-top: 24px; }
+.authForm label { display: grid; gap: 8px; color: #dce4f2; font-size: 13px; font-weight: 750; }
+.authForm input, .authForm textarea { width: 100%; border: 1px solid #31435f; background: #0a1526; color: var(--text); border-radius: 12px; padding: 13px 14px; outline: none; resize: vertical; }
+.authForm input:focus, .authForm textarea:focus { border-color: var(--purple-2); box-shadow: 0 0 0 3px rgba(124,77,255,.12); }
+.primaryBtn { border: 0; background: linear-gradient(135deg, var(--purple), #5d35da); color: white; min-height: 46px; padding: 0 18px; border-radius: 12px; font-weight: 850; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+.primaryBtn:hover { filter: brightness(1.08); }
+.inlineBtn { width: fit-content; }
+.authSwitch { color: var(--muted); margin: 20px 0 0; text-align: center; }
+.authSwitch a { color: #c8b6ff; font-weight: 800; }
+.notice { margin: 18px 0; border-radius: 12px; padding: 12px 14px; border: 1px solid var(--line); font-size: 13px; line-height: 1.5; }
+.notice.warning { border-color: #725c29; background: rgba(255,200,87,.08); color: #f1d791; }
+.notice.error { border-color: #76394c; background: rgba(255,94,126,.08); color: #ffb4c3; }
+.notice.success { border-color: #286347; background: rgba(61,220,151,.08); color: #9deac8; }
+.centerCard { text-align: center; }
+.centerCard .inlineBtn { margin: 16px auto 0; }
+.bigIcon { width: 66px; height: 66px; display: grid; place-items: center; margin: 0 auto 18px; border-radius: 20px; background: rgba(124,77,255,.14); border: 1px solid #5c4398; color: #c9b8ff; font-size: 28px; font-weight: 900; }
+.fieldHint { color: var(--muted); font-weight: 500; }
+.libraryFeedback { color: #aebbd0; font-size: 12px; margin: 8px 0 0; }
+.libraryActions button:disabled { opacity: .55; cursor: wait; }
+.emptyState { padding: 30px; text-align: center; border-radius: 18px; }
+.emptyState h3 { font-size: 24px; margin: 0 0 8px; }
+.emptyState p { color: var(--muted); margin: 0 auto 18px; max-width: 580px; }
+.adminGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.adminCard { padding: 22px; border-radius: 18px; }
+.adminCard > b { color: #c8b6ff; }
+.adminCard h2 { margin: 12px 0 8px; }
+.adminCard p { color: var(--muted); line-height: 1.6; }
+code { padding: 2px 6px; border-radius: 6px; background: #111e32; color: #cabaff; }
+
+@media (max-width: 900px) {
+  .adminGrid { grid-template-columns: 1fr; }
+  .accountActions { gap: 5px; }
+  .headerLogout, .adminPill { display: none; }
+}
+
+@media (max-width: 760px) {
+  .accountActions { grid-column: 2; grid-row: 1; }
+  .accountActions .profilePill { max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .authShell { padding: 24px 0; }
+}
+
+/* NIVOX v0.3 — validación y moderación */
+.microcopy { color: var(--muted); font-size: 12px; line-height: 1.55; margin: 12px 0 0; }
+
+/* NIVOX v0.4 — panel editorial */
+.adminNav { display: flex; gap: 8px; flex-wrap: wrap; padding: 8px; border: 1px solid var(--line); border-radius: 14px; background: rgba(9,18,31,.72); }
+.adminNav a { padding: 9px 13px; border-radius: 10px; color: #b8c5d8; font-size: 13px; font-weight: 800; }
+.adminNav a:hover { background: rgba(124,77,255,.13); color: white; }
+.adminTitleRow { display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+.adminTitleRow h1 { margin: 5px 0 0; font-size: clamp(34px,5vw,58px); letter-spacing: -1.8px; }
+.adminTitleRow p { margin-bottom: 0; }
+.adminStats { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; }
+.adminStats article { padding: 20px; display: grid; gap: 3px; }
+.adminStats span, .adminStats small { color: var(--muted); }
+.adminStats b { font-size: 34px; }
+.adminForm { padding: clamp(18px,3vw,30px); display: grid; gap: 18px; }
+.adminForm label { display: grid; gap: 8px; color: #dce4f2; font-size: 13px; font-weight: 800; }
+.adminForm input, .adminForm textarea, .adminForm select { width: 100%; border: 1px solid #31435f; background: #0a1526; color: var(--text); border-radius: 12px; padding: 13px 14px; outline: none; font: inherit; }
+.adminForm textarea { resize: vertical; line-height: 1.55; }
+.adminForm input:focus, .adminForm textarea:focus, .adminForm select:focus { border-color: var(--purple-2); box-shadow: 0 0 0 3px rgba(124,77,255,.12); }
+.adminFormGrid { display: grid; gap: 16px; align-items: end; }
+.adminFormGrid.two { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.adminFormGrid.three { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.adminFormActions { display: flex; gap: 10px; align-items: end; justify-content: flex-end; }
+.adminTableWrap { overflow-x: auto; border-radius: 16px; }
+.adminTable { width: 100%; border-collapse: collapse; min-width: 760px; }
+.adminTable th, .adminTable td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.adminTable th { color: #8fa0b8; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+.adminTable td { color: #ccd6e5; font-size: 13px; }
+.adminTable td strong, .adminTable td small { display: block; }
+.adminTable td small { color: var(--muted); margin-top: 4px; }
+.tableActions { display: flex; gap: 8px; align-items: center; justify-content: flex-end; }
+.tableActions form { margin: 0; }
+.tableActions a, .tableActions button { border: 1px solid #32445f; background: #101d30; color: #c9d5e7; border-radius: 9px; padding: 7px 10px; cursor: pointer; font: inherit; font-size: 12px; }
+.tableActions button:hover, .tableActions a:hover { border-color: #6d53c6; color: white; }
+.statusBadge { display: inline-flex; padding: 5px 8px; border-radius: 999px; font-size: 11px; font-weight: 850; background: rgba(148,163,184,.12); color: #b9c6d8; }
+.statusBadge.published, .statusBadge.resolved { background: rgba(61,220,151,.11); color: #91e5bd; }
+.statusBadge.draft, .statusBadge.open { background: rgba(255,200,87,.1); color: #efd27d; }
+.statusBadge.dismissed { background: rgba(148,163,184,.12); color: #aab5c5; }
+.muted { color: var(--muted); }
+.editorialPage { width: min(100% - 32px, 920px); padding: 48px 0 70px; }
+.editorialPage header { padding: 28px 0; }
+.editorialPage h1 { font-size: clamp(40px,7vw,76px); line-height: .98; letter-spacing: -2.5px; margin: 14px 0 18px; }
+.editorialPage header small { color: var(--muted); }
+.backLink { color: #bfaeff; font-weight: 800; font-size: 13px; }
+.editorialCover { display: block; width: 100%; max-height: 520px; object-fit: cover; border-radius: 18px; border: 1px solid var(--line); margin-bottom: 32px; }
+.editorialBody { font-size: 18px; line-height: 1.85; color: #cad4e3; }
+.editorialBody p { margin: 0 0 1.35em; }
+.contentList a.articleRow, .guideCards a.bigGuide { color: inherit; text-decoration: none; }
+.guideList > a { display: grid; grid-template-columns: 42px 1fr; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); color: inherit; }
+.guideList > a h3 { margin: 0 0 3px; font-size: 15px; }
+.guideList > a p { margin: 0; color: var(--muted); font-size: 12px; }
+
+@media (max-width: 900px) {
+  .adminStats { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .adminFormGrid.three { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 680px) {
+  .adminTitleRow { align-items: stretch; flex-direction: column; }
+  .adminTitleRow .primaryBtn { width: 100%; }
+  .adminFormGrid.two, .adminFormGrid.three { grid-template-columns: 1fr; }
+  .adminFormActions { justify-content: stretch; }
+  .adminFormActions > * { flex: 1; }
+  .adminStats { grid-template-columns: 1fr 1fr; }
+  .editorialPage { width: min(100% - 22px,920px); padding-top: 28px; }
+  .editorialBody { font-size: 16px; }
+}
+
+/* NIVOX v0.5 — comunidad real */
+.communityToolbar { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+.filters a, .sortLinks a { border: 1px solid #2d405e; border-radius: 999px; padding: 10px 15px; background: #101c2f; white-space: nowrap; color: #c2cee0; font-size: 13px; font-weight: 750; }
+.filters a.active, .sortLinks a.active { background: var(--purple); border-color: var(--purple); color: white; }
+.sortLinks { display: flex; gap: 8px; }
+.communityPostCard { transition: border-color .18s ease, transform .18s ease; }
+.communityPostCard:hover { border-color: #493b73; }
+.postTitleLink:hover h2 { color: #c7b7ff; }
+.communityImage { width: 100%; max-height: 560px; object-fit: cover; border-radius: 14px; border: 1px solid var(--line); margin: 8px 0 16px; background: #07101d; display: block; }
+.communityActions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.communityActions form { margin: 0; }
+.communityActions a { color: #aebbd0; }
+.voteBtn { border: 1px solid #334766; background: #101e32; color: #cbd6e7; border-radius: 999px; padding: 8px 12px; cursor: pointer; font-weight: 850; }
+.voteBtn.active { border-color: #785bf0; background: rgba(124,77,255,.18); color: #d2c5ff; }
+.communityComposeShell { align-items: start; }
+.communityCompose { width: min(100%, 760px); }
+.authForm select, .commentComposer textarea { width: 100%; border: 1px solid #31435f; background: #0a1526; color: var(--text); border-radius: 12px; padding: 13px 14px; outline: none; font: inherit; }
+.authForm select:focus, .commentComposer textarea:focus { border-color: var(--purple-2); box-shadow: 0 0 0 3px rgba(124,77,255,.12); }
+.communityUploader { display: grid; gap: 10px; }
+.uploadDrop { min-height: 124px; border: 1px dashed #455c80; border-radius: 14px; background: rgba(17,30,50,.55); display: grid !important; place-items: center; align-content: center; gap: 5px !important; text-align: center; cursor: pointer; padding: 18px; }
+.uploadDrop input { position: absolute; inline-size: 1px; block-size: 1px; opacity: 0; pointer-events: none; }
+.uploadDrop b { color: #d7ccff; font-size: 15px; }
+.uploadDrop span { color: var(--muted); font-size: 12px; font-weight: 500; }
+.uploadPreview { display: grid; gap: 10px; }
+.uploadPreview img { max-height: 420px; width: 100%; object-fit: cover; border-radius: 14px; border: 1px solid var(--line); }
+.uploadPreview .ghostBtn { width: fit-content; cursor: pointer; }
+.communityDetail { width: min(980px, calc(100% - 32px)); }
+.communityDetailPost { padding: clamp(20px,4vw,38px); }
+.communityDetailPost h1 { font-size: clamp(34px,6vw,68px); line-height: 1.02; letter-spacing: -2px; margin: 22px 0; }
+.communityLongText { color: #c5d0df; font-size: 17px; line-height: 1.8; }
+.communityLongText p { margin: 0 0 1em; }
+.communityDetailImage { width: 100%; max-height: 720px; object-fit: contain; background: #050b14; border: 1px solid var(--line); border-radius: 16px; margin: 18px 0; }
+.detailActions { border-top: 1px solid var(--line); margin-top: 24px; padding-top: 18px; }
+.reportLink { margin-left: auto; color: #9eabc0 !important; font-size: 12px; }
+.dangerTextBtn { border: 0; background: transparent; color: #ff99ad; cursor: pointer; padding: 8px 0; font-size: 12px; }
+.commentsSection { display: grid; gap: 16px; }
+.commentComposer { padding: 18px; display: grid; gap: 12px; }
+.commentComposer textarea { resize: vertical; line-height: 1.6; }
+.commentComposer > div { display: flex; justify-content: space-between; align-items: center; gap: 14px; }
+.commentComposer small { color: var(--muted); }
+.commentList { display: grid; gap: 10px; }
+.commentCard { padding: 18px; }
+.commentCard p { color: #c4cede; line-height: 1.65; white-space: pre-wrap; }
+.avatar.small { width: 30px; height: 30px; font-size: 12px; }
+.commentActions { display: flex; justify-content: flex-end; gap: 12px; border-top: 1px solid var(--line); padding-top: 10px; }
+.commentActions a, .commentActions button { border: 0; background: transparent; padding: 0; color: #8fa0b8; cursor: pointer; font-size: 12px; }
+.commentActions button { color: #ff99ad; }
+.moderationPreview { max-width: 420px; line-height: 1.45; white-space: normal; }
+.tableActions .dangerAction { border-color: #75384a; color: #ffafbe; }
+.communityAdminStats { grid-template-columns: repeat(5,minmax(0,1fr)); }
+
+@media (max-width: 1100px) {
+  .communityAdminStats { grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
+@media (max-width: 760px) {
+  .communityToolbar { align-items: stretch; }
+  .sortLinks { width: 100%; }
+  .sortLinks a { flex: 1; text-align: center; }
+  .communityDetail { width: min(100% - 20px, 980px); }
+  .commentComposer > div { align-items: stretch; flex-direction: column; }
+  .commentComposer .primaryBtn { width: 100%; }
+  .reportLink { margin-left: 0; }
+  .communityAdminStats { grid-template-columns: 1fr 1fr; }
+}
+.myCommunityList { display: grid; gap: 10px; }
+.myCommunityRow { padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.myCommunityRow:hover { border-color: #5b48a0; }
+.myCommunityRow h3 { margin: 8px 0 5px; }
+.myCommunityRow small { color: var(--muted); }
+.myCommunityMetrics { display: flex; gap: 12px; color: #aebbd0; white-space: nowrap; }
+@media (max-width: 620px) { .myCommunityRow { align-items: stretch; flex-direction: column; } }
+
+/* NIVOX v0.6 — perfiles, seguidores y notificaciones */
+.notificationPill { position: relative; min-width: 38px; height: 38px; border: 1px solid #2d405e; border-radius: 11px; display: inline-grid; place-items: center; background: #101c2f; color: #dbe4f2; text-decoration: none; }
+.notificationPill b { position: absolute; right: -7px; top: -7px; min-width: 20px; height: 20px; padding: 0 5px; display: grid; place-items: center; border-radius: 999px; background: var(--purple); color: #fff; border: 2px solid #09121f; font-size: 10px; }
+.publicProfilePage { padding-bottom: 72px; }
+.publicProfileHero { align-items: center; }
+.publicProfileIntro { min-width: 0; flex: 1; }
+.publicProfileIntro h1 { margin: 4px 0 6px; }
+.profileNameRow { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.profileHeroActions { margin-left: auto; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.profileHeroActions form { margin: 0; }
+.profileConnectionLinks { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; margin-top: 12px; }
+.profileConnectionLinks a { color: #9baac0; font-size: 13px; }
+.profileConnectionLinks b { color: #f0f4fb; margin-right: 4px; }
+.reportProfileLink { color: #d58ea1; font-size: 12px; font-weight: 700; }
+.imageAvatar { object-fit: cover; }
+.profileStatsGrid { grid-template-columns: repeat(4,minmax(0,1fr)); }
+.authorLink { color: inherit; text-decoration: none; }
+.authorLink:hover b { color: #c8b9ff; }
+.narrowSocialPage { width: min(760px, calc(100% - 32px)); padding: 42px 0 70px; }
+.narrowSocialPage h1 { margin: 0; font-size: clamp(34px,6vw,56px); }
+.connectionList { display: grid; gap: 10px; }
+.connectionCard { display: grid; grid-template-columns: 44px 1fr; align-items: center; gap: 13px; padding: 14px 16px; color: inherit; }
+.connectionCard:hover { border-color: #5b48a0; }
+.connectionCard > div { min-width: 0; display: grid; gap: 2px; }
+.connectionCard b { color: #ecf1f8; }
+.connectionCard span { color: #bcc8d8; font-size: 13px; }
+.connectionCard small { color: var(--muted); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.notificationsPage { width: min(900px, calc(100% - 32px)); padding-bottom: 70px; }
+.notificationList { display: grid; gap: 10px; }
+.notificationCard { padding: 15px 16px; display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 13px; }
+.notificationCard.unread { border-color: #6850bd; background: linear-gradient(90deg, rgba(124,77,255,.10), rgba(14,27,47,.9)); }
+.notificationIcon { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; background: #17263d; }
+.notificationBody { min-width: 0; display: grid; gap: 4px; }
+.notificationBody b { color: #e6edf8; font-size: 14px; }
+.notificationBody small { color: var(--muted); }
+.compactBtn { padding: 8px 11px !important; font-size: 12px !important; }
+.replyComment { margin-left: 42px; border-left: 2px solid #513d93; }
+.replyContext { margin-bottom: 10px; color: #899ab2; font-size: 12px; }
+.replyContext a { color: #bcaaff; }
+.replyDetails { margin-right: auto; }
+.replyDetails summary { cursor: pointer; color: #9eabc0; font-size: 12px; list-style: none; }
+.replyDetails summary::-webkit-details-marker { display: none; }
+.replyComposer { display: grid; gap: 8px; width: min(560px, 70vw); padding-top: 10px; }
+.replyComposer textarea { width: 100%; border: 1px solid #31435f; background: #0a1526; color: var(--text); border-radius: 10px; padding: 10px 11px; resize: vertical; font: inherit; line-height: 1.5; }
+.replyComposer .primaryBtn { justify-self: end; }
+
+@media (max-width: 760px) {
+  .publicProfileHero { align-items: flex-start; }
+  .profileHeroActions { width: 100%; margin-left: 0; }
+  .profileHeroActions > * { flex: 1; }
+  .profileHeroActions form button, .profileHeroActions > a { width: 100%; text-align: center; justify-content: center; }
+  .profileStatsGrid { grid-template-columns: 1fr 1fr; }
+  .notificationCard { grid-template-columns: 36px 1fr; }
+  .notificationCard form { grid-column: 2; }
+  .replyComment { margin-left: 18px; }
+  .replyComposer { width: min(100%, 76vw); }
+}
+
+/* NIVOX v0.7 — feed personalizado, búsqueda, edición y spoilers */
+.feedShortcut { display: inline-flex; margin-top: 12px; color: #c9bcff; font-size: 13px; font-weight: 800; }
+.feedReasonLegend { display: flex; justify-content: space-between; gap: 14px; align-items: center; color: var(--muted); font-size: 13px; }
+.feedReasonLegend a { color: #bcaaff; font-weight: 800; }
+.feedReason { width: fit-content; margin-bottom: 12px; border: 1px solid rgba(124,77,255,.3); background: rgba(124,77,255,.09); color: #cbbfff; border-radius: 999px; padding: 5px 9px; font-size: 11px; font-weight: 800; }
+.spoilerToggle { display: flex !important; grid-template-columns: auto 1fr; align-items: center; justify-content: flex-start; gap: 9px !important; width: fit-content; }
+.spoilerToggle input { width: 17px !important; height: 17px; margin: 0; accent-color: var(--purple); }
+.spoilerBlock { border: 1px solid #4a3d6e; background: rgba(43,32,71,.28); border-radius: 14px; padding: 14px 16px; margin: 10px 0 16px; }
+.spoilerBlock summary { cursor: pointer; color: #d4c8ff; font-weight: 850; user-select: none; }
+.spoilerBlock[open] summary { margin-bottom: 14px; }
+.spoilerBlock p { color: #c5d0df; line-height: 1.7; white-space: pre-wrap; }
+.detailSpoiler { padding: 18px 20px; margin: 20px 0; }
+.editTextLink { color: #bcaaff !important; font-size: 12px; font-weight: 800; }
+.searchPage { width: min(100% - 32px, 980px); padding-bottom: 72px; }
+.searchResults { overflow: hidden; display: grid; }
+.searchResult { padding: 15px 18px; display: grid; gap: 5px; border-bottom: 1px solid var(--line); color: inherit; }
+.searchResult:last-child { border-bottom: 0; }
+.searchResult:hover { background: rgba(124,77,255,.07); }
+.searchResult b { color: #edf2fa; }
+.searchResult span { color: var(--muted); font-size: 13px; line-height: 1.45; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+@media (max-width: 700px) {
+  .feedReasonLegend { align-items: flex-start; flex-direction: column; }
+  .searchPage { width: min(100% - 20px, 980px); }
+}
+
+/* NIVOX v0.8 — reseñas, puntuaciones y ranking */
+.gamesHeroWithAction { display: flex; justify-content: space-between; align-items: end; gap: 20px; }
+.gamesHeroWithAction > div { min-width: 0; }
+.gameHeroScores { display: flex; gap: 10px; align-items: stretch; flex-wrap: wrap; }
+.communityScorePill { color: inherit; text-decoration: none; }
+.communityScorePill:hover { border-color: #9a7bff; background: rgba(124,77,255,.12); }
+.reviewSection { padding-bottom: 18px; scroll-margin-top: 120px; }
+.reviewHeader { display: flex; justify-content: space-between; align-items: end; gap: 20px; }
+.reviewHeader h2 { margin: 6px 0 7px; font-size: clamp(30px,5vw,48px); letter-spacing: -1.4px; }
+.reviewHeader p { margin: 0; }
+.reviewSummaryGrid { display: grid; grid-template-columns: minmax(220px,.7fr) minmax(0,1.3fr); gap: 14px; }
+.communityScoreCard { min-height: 220px; display: grid; place-items: center; align-content: center; text-align: center; padding: 24px; }
+.communityScoreCard > span { color: var(--muted); font-size: 13px; font-weight: 800; }
+.communityScoreCard > b { margin-top: 5px; font-size: clamp(64px,8vw,94px); line-height: .95; letter-spacing: -4px; }
+.communityScoreCard > strong { color: #bcaaff; }
+.communityScoreCard > small { margin-top: 8px; color: var(--muted); }
+.scoreDistribution { padding: 22px; display: grid; gap: 13px; align-content: center; }
+.scoreDistribution h3 { margin: 0 0 4px; }
+.scoreBarRow { display: grid; grid-template-columns: 56px 1fr 34px; align-items: center; gap: 10px; color: #b9c6d8; font-size: 12px; }
+.scoreBarRow b { text-align: right; color: #e5ebf5; }
+.scoreBar { height: 8px; background: #17253a; border-radius: 999px; overflow: hidden; }
+.scoreBar i { display: block; height: 100%; background: linear-gradient(90deg, var(--purple), #9d83ff); border-radius: inherit; }
+.reviewLogin { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 20px; }
+.reviewLogin h3, .reviewLogin p { margin: 0; }
+.reviewLogin p { margin-top: 5px; color: var(--muted); }
+.reviewForm { padding: 20px; display: grid; gap: 14px; }
+.reviewForm label { display: grid; gap: 8px; color: #dbe4f1; font-size: 13px; font-weight: 800; }
+.reviewForm input, .reviewForm textarea, .reviewReport input { width: 100%; border: 1px solid #31435f; background: #0a1526; color: var(--text); border-radius: 12px; padding: 12px 13px; outline: none; font: inherit; }
+.reviewForm input:focus, .reviewForm textarea:focus, .reviewReport input:focus { border-color: var(--purple-2); box-shadow: 0 0 0 3px rgba(124,77,255,.12); }
+.reviewForm textarea { resize: vertical; line-height: 1.65; }
+.reviewComposeTitle { display: flex; align-items: end; justify-content: space-between; gap: 18px; }
+.reviewComposeTitle h3, .reviewComposeTitle p { margin: 0; }
+.reviewComposeTitle p { margin-top: 5px; color: var(--muted); font-size: 13px; }
+.reviewComposeTitle label { width: 120px; }
+.reviewFormActions { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.reviewFormActions small { color: var(--muted); }
+.reviewEditor { overflow: hidden; }
+.reviewEditor > summary { cursor: pointer; padding: 18px 20px; font-weight: 850; color: #d7ccff; }
+.reviewEditor[open] > summary { border-bottom: 1px solid var(--line); }
+.deleteReviewForm { padding: 0 20px 18px; }
+.reviewToolbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.reviewToolbar > div:first-child { display: flex; align-items: baseline; gap: 9px; }
+.reviewToolbar h3 { margin: 0; }
+.reviewToolbar > div:first-child span { color: var(--muted); }
+.reviewList { display: grid; gap: 12px; }
+.reviewCard { padding: 20px; }
+.reviewCard.myReviewCard { border-color: #6550b3; }
+.reviewCardTop { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.reviewAuthor { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.reviewAuthor > div { display: grid; gap: 2px; min-width: 0; }
+.reviewAuthor small { color: var(--muted); }
+.reviewScore { min-width: 58px; height: 58px; border-radius: 16px; display: grid; place-items: center; background: rgba(124,77,255,.14); border: 1px solid #654db6; font-size: 22px; font-weight: 950; }
+.reviewCard > p { color: #c5d0df; line-height: 1.7; white-space: pre-wrap; }
+.reviewActions { display: flex; gap: 9px; align-items: center; flex-wrap: wrap; padding-top: 13px; border-top: 1px solid var(--line); }
+.reviewActions > span { color: var(--muted); font-size: 12px; }
+.reviewActions form { margin: 0; }
+.reviewVote { border: 1px solid #334766; background: #101e32; color: #c6d2e3; border-radius: 999px; padding: 7px 10px; cursor: pointer; font: inherit; font-size: 12px; font-weight: 800; }
+.reviewVote.active { border-color: #59a97f; background: rgba(61,220,151,.11); color: #96e8c0; }
+.reviewVote.active.negative { border-color: #8b4a5e; background: rgba(255,120,145,.08); color: #ffacbc; }
+.reviewReport { margin-left: auto; position: relative; }
+.reviewReport summary { cursor: pointer; color: #8fa0b8; font-size: 12px; list-style: none; }
+.reviewReport summary::-webkit-details-marker { display: none; }
+.reviewReport form { margin-top: 8px; display: flex; gap: 7px; width: min(420px,70vw); }
+.reviewReport input { min-width: 0; padding: 8px 10px; }
+.reviewReport button { border: 1px solid #6d4150; background: #24131a; color: #ffadbc; border-radius: 9px; padding: 8px 10px; cursor: pointer; }
+.rankingPage { padding-bottom: 72px; }
+.rankingLegend { display: flex; justify-content: flex-end; gap: 18px; color: var(--muted); font-size: 12px; }
+.rankingList { display: grid; gap: 10px; }
+.rankingRow { display: grid; grid-template-columns: 52px 70px minmax(0,1fr) 90px 90px 90px; align-items: center; gap: 14px; padding: 12px 16px; color: inherit; }
+.rankingRow:hover { border-color: #6550b3; transform: translateY(-1px); }
+.rankingRow img, .rankingCoverFallback { width: 70px; height: 70px; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); }
+.rankingCoverFallback { display: grid; place-items: center; background: linear-gradient(135deg,#30205f,#12243e); font-size: 24px; font-weight: 950; }
+.rankingPosition { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 13px; background: #17263d; color: #c7d2e2; font-weight: 950; }
+.rankingPosition.rank-1 { background: rgba(255,200,87,.14); color: #f1d57c; border: 1px solid rgba(255,200,87,.35); }
+.rankingPosition.rank-2 { background: rgba(194,207,224,.12); color: #d8e2ef; border: 1px solid rgba(194,207,224,.25); }
+.rankingPosition.rank-3 { background: rgba(210,139,83,.12); color: #e9b286; border: 1px solid rgba(210,139,83,.25); }
+.rankingGame { display: grid; gap: 4px; min-width: 0; }
+.rankingGame b { font-size: 16px; }
+.rankingGame small { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rankingMetric { text-align: right; display: grid; gap: 2px; }
+.rankingMetric b { font-size: 18px; }
+.rankingMetric small { color: var(--muted); }
+
+@media (max-width: 900px) {
+  .rankingRow { grid-template-columns: 46px 58px minmax(0,1fr) 74px; }
+  .rankingRow img, .rankingCoverFallback { width: 58px; height: 58px; }
+  .rankingMetric:nth-last-child(-n+2) { display: none; }
+}
+@media (max-width: 700px) {
+  .gamesHeroWithAction, .reviewHeader, .reviewLogin, .reviewComposeTitle, .reviewFormActions { align-items: stretch; flex-direction: column; }
+  .reviewSummaryGrid { grid-template-columns: 1fr; }
+  .reviewComposeTitle label { width: 100%; }
+  .reviewFormActions .primaryBtn, .reviewLogin .primaryBtn { width: 100%; text-align: center; justify-content: center; }
+  .reviewToolbar .sortLinks { overflow-x: auto; padding-bottom: 4px; }
+  .reviewReport { width: 100%; margin-left: 0; }
+  .reviewReport form { width: 100%; }
+  .rankingLegend { justify-content: flex-start; overflow-x: auto; }
+  .rankingRow { grid-template-columns: 38px 52px minmax(0,1fr) 58px; padding: 10px; gap: 9px; }
+  .rankingRow img, .rankingCoverFallback { width: 52px; height: 52px; }
+  .rankingPosition { width: 34px; height: 34px; border-radius: 10px; }
+  .rankingMetric b { font-size: 16px; }
+  .rankingMetric small { display: none; }
+}
+.profileReviewList { display: grid; gap: 10px; }
+.profileReviewRow { display: flex; justify-content: space-between; gap: 18px; align-items: center; padding: 16px 18px; color: inherit; }
+.profileReviewRow:hover { border-color: #6550b3; }
+.profileReviewRow > div { min-width: 0; }
+.profileReviewRow h3 { margin: 8px 0 5px; }
+.profileReviewRow p { margin: 0 0 6px; color: #b9c5d6; line-height: 1.55; }
+.profileReviewRow small, .profileReviewRow > span { color: var(--muted); }
+.profileReviewRow > span { white-space: nowrap; }
+@media (max-width: 620px) { .profileReviewRow { align-items: stretch; flex-direction: column; } }
+.reviewModerationNote { margin: 16px 20px 0; padding: 11px 13px; border: 1px solid #704052; border-radius: 11px; background: rgba(126,55,76,.12); color: #f0b7c3; font-size: 13px; line-height: 1.5; }
+
+/* NIVOX v0.9 — lanzamientos, seguimiento y avisos de juegos */
+.gameEngagementBar { display: grid; grid-template-columns: minmax(0,1.3fr) minmax(220px,.9fr) auto; gap: 14px; align-items: start; }
+.gameFollow { display: grid; gap: 6px; }
+.gameFollowBtn { min-height: 44px; border: 1px solid #3a4b68; border-radius: 12px; background: #101c2f; color: #dce6f4; padding: 0 15px; font: inherit; font-weight: 850; cursor: pointer; }
+.gameFollowBtn:hover { border-color: #765fe0; }
+.gameFollowBtn.active { border-color: #7158dc; background: rgba(124,77,255,.15); color: #d9ceff; }
+.gameFollowBtn:disabled { opacity: .6; cursor: wait; }
+.gameFollow > span, .gameFollow > small { color: var(--muted); font-size: 11px; line-height: 1.4; }
+.gameFollow.compact { display: block; }
+.gameFollow.compact .gameFollowBtn { min-height: 36px; padding: 0 12px; font-size: 12px; }
+.gameFollowerCount { min-height: 44px; display: grid; align-content: center; justify-items: end; gap: 1px; color: var(--muted); }
+.gameFollowerCount b { color: var(--text); font-size: 18px; }
+.gameFollowerCount span { font-size: 11px; }
+
+.releaseHero { display: flex; justify-content: space-between; align-items: end; gap: 22px; }
+.releaseFilters { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
+.releaseFilters a { flex: 0 0 auto; border: 1px solid #2d3c55; background: #0d1828; color: #aab7ca; border-radius: 999px; padding: 9px 13px; font-size: 12px; font-weight: 800; }
+.releaseFilters a.active, .releaseFilters a:hover { color: #e7e0ff; border-color: #6952c9; background: rgba(124,77,255,.12); }
+.releaseMonths { display: grid; gap: 30px; }
+.releaseMonth { display: grid; gap: 12px; }
+.releaseMonth .sectionTitle h2 { text-transform: capitalize; }
+.releaseList { display: grid; gap: 10px; }
+.releaseCard { display: grid; grid-template-columns: 78px minmax(0,1fr) auto; align-items: center; gap: 16px; padding: 13px 16px 13px 13px; }
+.releaseDate { width: 64px; height: 68px; border-radius: 15px; display: grid; place-items: center; align-content: center; border: 1px solid #354967; background: linear-gradient(145deg,#172946,#191631); }
+.releaseDate b { font-size: 24px; line-height: 1; }
+.releaseDate span { margin-top: 4px; color: #b8c4d5; font-size: 11px; text-transform: uppercase; font-weight: 900; }
+.releaseInfo { min-width: 0; }
+.releaseInfo h3 { margin: 0; color: var(--text); font-size: 17px; }
+.releaseInfo p { margin: 5px 0; color: #aebbd0; font-size: 13px; }
+.releaseInfo small { color: var(--muted); }
+.releaseActions { display: flex; align-items: center; gap: 8px; }
+.recentReleaseGrid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; }
+.recentRelease { padding: 16px; color: inherit; }
+.recentRelease:hover { border-color: #6550b3; }
+.recentRelease span { color: #9f8cff; font-size: 11px; font-weight: 900; text-transform: uppercase; }
+.recentRelease h3 { margin: 7px 0 5px; }
+.recentRelease p { margin: 0; color: var(--muted); font-size: 12px; }
+.gameNotification { border-color: rgba(124,77,255,.28); }
+.followedGameList { display: grid; gap: 9px; }
+.followedGameRow { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 16px; color: inherit; }
+.followedGameRow:hover { border-color: #6550b3; }
+.followedGameRow h3, .followedGameRow p { margin: 0; }
+.followedGameRow p { margin-top: 4px; color: var(--muted); font-size: 12px; }
+.followedGameRow > span { white-space: nowrap; color: #b8c4d5; font-size: 12px; }
+
+@media (max-width: 900px) {
+  .gameEngagementBar { grid-template-columns: 1fr 1fr; }
+  .gameFollowerCount { grid-column: 1 / -1; justify-items: start; }
+  .recentReleaseGrid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 700px) {
+  .releaseHero { align-items: stretch; flex-direction: column; }
+  .releaseCard { grid-template-columns: 58px minmax(0,1fr); }
+  .releaseDate { width: 54px; height: 60px; }
+  .releaseDate b { font-size: 20px; }
+  .releaseActions { grid-column: 1 / -1; justify-content: flex-end; }
+  .gameEngagementBar { grid-template-columns: 1fr; }
+  .gameFollowerCount { grid-column: auto; }
+  .recentReleaseGrid { grid-template-columns: 1fr; }
+  .followedGameRow { align-items: flex-start; flex-direction: column; }
+}
+.editorialTags { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.linkedTag { text-decoration: none; }
+.linkedTag:hover { border-color: #7058d3; color: #e2d9ff; }
+.heroActionGroup { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+@media (max-width:700px){ .heroActionGroup { justify-content: flex-start; } }
+
+/* NIVOX v0.10 — reputación, XP, niveles e insignias */
+.reputationPage { padding-bottom: 76px; }
+.reputationHero { display: grid; grid-template-columns: 110px minmax(0,1fr) 110px; gap: 22px; align-items: center; padding: 22px; border-color: rgba(124,77,255,.38); background: linear-gradient(135deg, rgba(124,77,255,.08), rgba(14,25,43,.96) 42%, rgba(61,220,151,.04)); }
+.levelOrb { width: 92px; height: 92px; border-radius: 28px; display: grid; place-items: center; align-content: center; background: radial-gradient(circle at 35% 25%, #9e79ff, #5330c5 48%, #1a183a 100%); border: 1px solid #8a6bf0; box-shadow: 0 12px 34px rgba(124,77,255,.25); }
+.levelOrb span { font-size: 10px; letter-spacing: 1.4px; font-weight: 900; opacity: .82; }
+.levelOrb b { font-size: 34px; line-height: 1; margin-top: 5px; }
+.reputationHeroBody { min-width: 0; display: grid; gap: 11px; }
+.reputationHeroTitle { display: flex; justify-content: space-between; align-items: end; gap: 16px; }
+.reputationHeroTitle h2 { margin: 4px 0 0; font-size: 27px; }
+.reputationHeroTitle > a, .publicReputationHead > a { color: #b9aaff; font-size: 13px; font-weight: 850; }
+.xpProgress { width: 100%; height: 12px; background: #091425; border: 1px solid #263958; border-radius: 999px; overflow: hidden; }
+.xpProgress > span { display: block; height: 100%; min-width: 0; border-radius: inherit; background: linear-gradient(90deg,#7250ff,#9d68ff,#3ddc97); box-shadow: 0 0 20px rgba(124,77,255,.4); }
+.xpProgressMeta { display: flex; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 11px; }
+.xpProgressMeta b { color: #c7d4e7; text-align: center; }
+.achievementCounter { text-align: center; padding: 13px 8px; border-left: 1px solid var(--line); }
+.achievementCounter b { display: block; font-size: 30px; color: #d8ceff; }
+.achievementCounter span { color: var(--muted); font-size: 11px; }
+.achievementGrid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+.achievementCard { display: grid; grid-template-columns: 58px 1fr; gap: 14px; align-items: center; padding: 17px; }
+.achievementCard.locked { opacity: .5; filter: saturate(.4); }
+.achievementCard.unlocked { border-color: rgba(255,200,87,.32); background: linear-gradient(145deg, rgba(255,200,87,.055), rgba(14,25,43,.98)); }
+.achievementIcon { width: 54px; height: 54px; border-radius: 16px; display: grid; place-items: center; font-size: 26px; background: #121e32; border: 1px solid #344968; }
+.achievementCard.unlocked .achievementIcon { background: rgba(255,200,87,.1); border-color: rgba(255,200,87,.36); }
+.achievementCard h3 { margin: 0 0 4px; }
+.achievementCard p { margin: 0 0 6px; color: #b4c1d4; line-height: 1.45; font-size: 13px; }
+.achievementCard small { color: var(--muted); }
+.reputationTwoCol { align-items: stretch; }
+.xpEventList { display: grid; gap: 4px; }
+.xpEvent { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 11px 0; border-bottom: 1px solid var(--line); }
+.xpEvent:last-child { border-bottom: 0; }
+.xpEvent > div { display: grid; gap: 3px; }
+.xpEvent small { color: var(--muted); }
+.xpEvent strong { color: #78e7af; white-space: nowrap; }
+.xpRules { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+.xpRules p { margin: 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 11px; background: #0b1727; color: #aebbd0; font-size: 12px; }
+.xpRules b { color: #89e8b9; margin-right: 5px; }
+.reputationLeaderboard { display: grid; gap: 9px; }
+.reputationRow { display: grid; grid-template-columns: 44px 46px minmax(0,1fr) 90px 80px; gap: 12px; align-items: center; padding: 11px 15px; color: inherit; }
+.reputationRow:hover { border-color: #654fbe; transform: translateY(-1px); }
+.reputationRow img, .miniAvatar { width: 44px; height: 44px; border-radius: 14px; object-fit: cover; border: 1px solid #354963; }
+.miniAvatar { display: grid; place-items: center; background: linear-gradient(135deg,#372170,#14283f); font-weight: 950; }
+.reputationRank { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 11px; background: #142139; color: #b8c5d8; font-weight: 950; }
+.reputationRank.rank-1 { color: #f3d77e; background: rgba(255,200,87,.12); border: 1px solid rgba(255,200,87,.3); }
+.reputationRank.rank-2 { color: #dde7f4; background: rgba(205,218,234,.1); }
+.reputationRank.rank-3 { color: #efb78b; background: rgba(208,135,77,.11); }
+.reputationUser { min-width: 0; display: grid; gap: 3px; }
+.reputationUser b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.reputationUser small { color: var(--muted); }
+.reputationMetric { display: grid; justify-items: end; }
+.reputationMetric b { font-size: 17px; }
+.reputationMetric small { color: var(--muted); font-size: 10px; }
+.levelChip { display: inline-flex; align-items: center; min-height: 29px; padding: 0 10px; border-radius: 999px; border: 1px solid #634db9; background: rgba(124,77,255,.12); color: #d6caff; font-size: 11px; font-weight: 900; white-space: nowrap; }
+.profileBadgesTop { display: flex; gap: 7px; flex-wrap: wrap; justify-content: flex-end; }
+.publicReputationCard { padding: 19px 20px; display: grid; gap: 12px; }
+.publicReputationHead { display: flex; align-items: end; justify-content: space-between; gap: 16px; }
+.publicReputationHead h2 { margin: 4px 0 0; }
+.publicBadgeStrip, .myAchievementStrip { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.publicBadge { display: inline-flex; align-items: center; gap: 6px; padding: 7px 9px; border: 1px solid #3b4961; border-radius: 999px; background: #101c2d; color: #c5d1e2; font-size: 11px; font-weight: 750; }
+.publicBadge b { font-size: 15px; }
+.publicBadgeStrip small, .myAchievementStrip small { color: var(--muted); }
+.myReputationHero { margin-top: -4px; }
+.miniXpPanel { padding: 16px 18px; }
+.miniXpList { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
+.miniXpList > div { display: flex; justify-content: space-between; gap: 8px; padding: 9px 11px; border-radius: 10px; border: 1px solid var(--line); background: #0b1727; font-size: 11px; }
+.miniXpList span { color: #b4c1d3; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.miniXpList b { color: #7ee3af; white-space: nowrap; }
+
+@media (max-width: 900px) {
+  .reputationHero { grid-template-columns: 86px minmax(0,1fr); }
+  .levelOrb { width: 78px; height: 78px; border-radius: 23px; }
+  .levelOrb b { font-size: 29px; }
+  .achievementCounter { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--line); display: flex; justify-content: center; align-items: center; gap: 7px; }
+  .achievementCounter b { font-size: 20px; }
+  .achievementGrid { grid-template-columns: 1fr; }
+  .miniXpList { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 650px) {
+  .reputationHero { grid-template-columns: 1fr; }
+  .levelOrb { margin: 0 auto; }
+  .reputationHeroTitle, .publicReputationHead { align-items: flex-start; flex-direction: column; }
+  .xpProgressMeta { font-size: 10px; }
+  .xpProgressMeta b { display: none; }
+  .achievementCard { grid-template-columns: 48px 1fr; }
+  .achievementIcon { width: 46px; height: 46px; border-radius: 13px; }
+  .xpRules { grid-template-columns: 1fr; }
+  .reputationRow { grid-template-columns: 32px 40px minmax(0,1fr) 68px; padding: 10px; gap: 8px; }
+  .reputationRow img, .miniAvatar { width: 40px; height: 40px; }
+  .reputationMetric:last-child { display: none; }
+  .reputationRank { width: 30px; height: 30px; }
+  .miniXpList { grid-template-columns: 1fr; }
+  .profileBadgesTop { justify-content: flex-start; }
+}
+
+/* v0.10.1 — Historial gamer + cuentas de plataformas */
+.gamerHistoryPage { max-width: 980px; }
+.gamerHistoryHero { padding: 22px; display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+.gamerHistoryHero h1 { margin: 4px 0 8px; font-size: clamp(28px,4vw,48px); }
+.gamerHistoryHero p { margin: 0; color: var(--muted); max-width: 680px; }
+.historySnapshot { min-width: 160px; text-align: right; display: grid; gap: 5px; }
+.historySnapshot b { font-size: 28px; color: #d9ceff; }
+.historySnapshot span { color: #aebbd0; font-weight: 800; }
+.gamerHistoryForm { padding: 22px; display: grid; gap: 18px; }
+.historyFormGrid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
+.historyFormGrid label { display: grid; gap: 7px; color: #c8d2e0; font-size: 12px; font-weight: 800; }
+.historyFormGrid input, .historyFormGrid select, .gamingAccountEditor input { width: 100%; border: 1px solid #31445f; background: #0a1525; color: #eef4ff; border-radius: 10px; padding: 11px 12px; outline: none; }
+.historyFormGrid input:focus, .historyFormGrid select:focus, .gamingAccountEditor input:focus { border-color: #785cf2; box-shadow: 0 0 0 3px rgba(124,77,255,.12); }
+.historyFormGrid small { color: var(--muted); font-weight: 500; }
+.historyWide { grid-column: 1 / -1; }
+.privacyToggle { display: flex; gap: 12px; align-items: flex-start; padding: 13px 14px; border: 1px solid var(--line); background: #0b1727; border-radius: 12px; }
+.privacyToggle input { margin-top: 3px; }
+.privacyToggle span { display: grid; gap: 3px; }
+.privacyToggle small { color: var(--muted); }
+.historyPrivacyNote { border: 1px solid rgba(124,77,255,.25); background: rgba(124,77,255,.07); color: #bfc9dc; border-radius: 11px; padding: 11px 13px; font-size: 12px; }
+.formFooterActions { display: flex; justify-content: flex-end; gap: 10px; flex-wrap: wrap; }
+.gameHistoryShortcut { white-space: nowrap; }
+.profileEditPage { max-width: 1040px; }
+.profileEditCard { width: min(100%,760px); margin: 0 auto; }
+.gamingAccountsPanel { padding: 22px; }
+.gamingAccountGrid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 16px; }
+.gamingAccountEditor { padding: 14px; border: 1px solid var(--line); border-radius: 13px; background: #0b1727; display: grid; gap: 7px; }
+.gamingAccountEditor form:first-child { display: grid; gap: 9px; }
+.platformLabel { display: flex; align-items: center; gap: 8px; }
+.platformLabel > span { font-size: 20px; }
+.miniPrivacy { display: flex; align-items: center; gap: 7px; color: var(--muted); font-size: 11px; }
+.gamerIdentityPanel { padding: 20px; display: grid; gap: 18px; }
+.gamerStatsGrid { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 9px; }
+.gamerStatsGrid > div { padding: 13px; background: #0b1727; border: 1px solid var(--line); border-radius: 12px; display: grid; gap: 3px; }
+.gamerStatsGrid b { font-size: 22px; color: #e5ddff; }
+.gamerStatsGrid span { color: var(--muted); font-size: 11px; }
+.publicGamingAccounts { display: grid; gap: 10px; }
+.publicGamingAccounts h3 { margin: 0; }
+.publicGamingAccounts small { color: var(--muted); }
+.gamingAccountChips { display: flex; flex-wrap: wrap; gap: 9px; }
+.gamingAccountChip { display: inline-grid; gap: 2px; padding: 9px 11px; border-radius: 11px; border: 1px solid #354764; background: #101c2d; }
+.gamingAccountChip b { font-size: 11px; color: #cfd8e7; }
+.gamingAccountChip > span { color: #fff; font-weight: 800; }
+.gamingAccountChip small { color: #8c9bb1; font-size: 9px; }
+.privateChip { opacity: .58; border-style: dashed; }
+.publicGameHistoryGrid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+.publicGameHistoryCard { padding: 16px; color: inherit; display: grid; gap: 13px; }
+.publicGameHistoryCard:hover { border-color: #654fbe; transform: translateY(-1px); }
+.publicGameHistoryTop { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.publicGameHistoryTop h3 { margin: 7px 0 0; }
+.completionBadge { color: #f5d77b; font-size: 12px; white-space: nowrap; }
+.gameHistoryMeta { display: flex; flex-wrap: wrap; gap: 8px 12px; color: #afbdd0; font-size: 11px; }
+.gameHistoryEditorList { display: grid; gap: 10px; }
+.gameHistoryEditorRow { padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 18px; color: inherit; }
+.gameHistoryEditorRow:hover { border-color: #654fbe; }
+.gameHistoryEditorRow h3 { margin: 6px 0 3px; }
+.gameHistoryEditorRow p { margin: 0; color: var(--muted); font-size: 12px; }
+.historyQuickStats { display: flex; gap: 9px; flex-wrap: wrap; align-items: center; justify-content: flex-end; text-align: right; }
+.historyQuickStats span, .historyQuickStats small { color: #aebbd0; font-size: 11px; }
+.historyQuickStats b { color: #f0d47d; font-size: 11px; }
+.myGamingAccounts { padding: 18px; }
+
+@media (max-width: 900px) {
+  .gamingAccountGrid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .gamerStatsGrid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
+@media (max-width: 650px) {
+  .gamerHistoryHero { align-items: flex-start; flex-direction: column; }
+  .historySnapshot { text-align: left; }
+  .historyFormGrid, .gamingAccountGrid, .publicGameHistoryGrid { grid-template-columns: 1fr; }
+  .gamerStatsGrid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .gameHistoryEditorRow { align-items: flex-start; flex-direction: column; }
+  .historyQuickStats { justify-content: flex-start; text-align: left; }
+  .formFooterActions { justify-content: stretch; }
+  .formFooterActions > * { flex: 1; text-align: center; }
+}
+
+/* NIVOX v0.10.2 — iconografía, consistencia visual y responsive */
+.nivoxIcon { display: inline-block; flex: 0 0 auto; line-height: 1; vertical-align: -0.16em; user-select: none; -webkit-user-select: none; }
+.brandSvg { display: block; flex: 0 0 auto; }
+.titleWithIcon, .inlineIconText, .inlineMetrics > span, .rankingLegend span, .historyPrivacyNote, .feedReason, .feedShortcut, .backLink, .spoilerBlock summary, .gamingAccountChip b, .platformLabel { display: inline-flex; align-items: center; gap: 7px; }
+.inlineMetrics { display: inline-flex; align-items: center; gap: 13px; flex-wrap: wrap; }
+.primaryBtn, .ghostBtn, .headerLogout, .adminPill, .profilePill, .gameFollowBtn, .voteBtn, .reviewVote, .compactBtn, .libraryActions button { gap: 7px; }
+.primaryBtn .nivoxIcon, .ghostBtn .nivoxIcon, .profilePill .nivoxIcon, .headerLogout .nivoxIcon, .adminPill .nivoxIcon { margin-inline: 0; }
+.searchBox > .nivoxIcon { color: #92a4bd; }
+.searchBox:focus-within { border-color: #7057d2; box-shadow: 0 0 0 3px rgba(124,77,255,.12); }
+.iconPill { display: inline-grid; place-items: center; }
+.profilePill, .adminPill, .headerLogout { display: inline-flex; align-items: center; justify-content: center; }
+.trendRow small { display: inline-flex; align-items: center; gap: 4px; }
+.guideIcon { color: #c7b8ff; }
+.uploadLabel { display: inline-flex; align-items: center; gap: 7px; }
+.notificationIcon { display: grid; place-items: center; color: #cbbcff; }
+.notificationCard.unread .notificationIcon { color: #e0d7ff; }
+.reviewVote, .voteBtn, .communityActions a { display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+.backLink { width: fit-content; }
+.historyPrivacyNote { align-items: flex-start; }
+.historyPrivacyNote .nivoxIcon { margin-top: 1px; color: #b6a7ff; }
+.platformLabel { min-width: 0; }
+.platformLabel b, .gamingAccountChip b { min-width: 0; }
+.gamingAccountChip b { color: #dbe4f3; }
+.gamingAccountChip .brandSvg, .platformLabel .brandSvg { filter: saturate(.95) brightness(1.08); }
+.gamingAccountChip { min-width: 0; }
+.gamingAccountChip > span { overflow-wrap: anywhere; }
+.rankingLegend span { white-space: nowrap; }
+.spoilerBlock summary { width: fit-content; }
+.feedReason { width: fit-content; }
+
+/* Mejor foco de teclado y controles táctiles */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, summary:focus-visible {
+  outline: 3px solid rgba(163,109,255,.72);
+  outline-offset: 3px;
+}
+button, [role="button"], summary { -webkit-tap-highlight-color: transparent; }
+.primaryBtn, .ghostBtn, .profilePill, .headerLogout, .adminPill, .notificationPill, .gameFollowBtn, .voteBtn, .reviewVote { min-height: 42px; }
+img { max-width: 100%; }
+h1, h2, h3, p, a, span, b, small { overflow-wrap: anywhere; }
+
+/* Ajustes de estructura para evitar desbordes */
+.topbar > *, .profileHero > *, .gameEngagementBar > *, .releaseCard > *, .reviewCard > *, .notificationCard > * { min-width: 0; }
+.nav { scroll-snap-type: x proximity; padding-inline: 1px; }
+.nav a { scroll-snap-align: start; }
+.filters, .releaseFilters, .sortLinks { scrollbar-width: none; }
+.filters::-webkit-scrollbar, .releaseFilters::-webkit-scrollbar, .sortLinks::-webkit-scrollbar, .nav::-webkit-scrollbar { display: none; }
+.adminTableWrap { -webkit-overflow-scrolling: touch; }
+
+@media (max-width: 900px) {
+  .topbar { grid-template-columns: minmax(150px, .8fr) minmax(220px, 1.3fr) auto; gap: 12px; }
+  .accountActions { flex-wrap: nowrap; }
+  .gamingAccountChips { align-items: stretch; }
+  .gamingAccountChip { flex: 1 1 220px; }
+  .reviewActions { align-items: flex-start; }
+}
+
+@media (max-width: 760px) {
+  .siteHeader { backdrop-filter: blur(20px); }
+  .topbar { grid-template-columns: minmax(0,1fr) auto; gap: 9px 10px; padding-top: 7px; }
+  .brand { min-width: 0; }
+  .brand > span:last-child { letter-spacing: -.4px; }
+  .accountActions { min-width: 0; }
+  .accountActions .profilePill { max-width: 150px; }
+  .accountActions .profilePill span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .searchBox { height: 46px; margin-bottom: 7px; }
+  .nav { min-height: 46px; gap: 9px; padding-bottom: 1px; }
+  .nav a { padding: 9px 10px; border-radius: 9px; background: rgba(16,28,48,.35); }
+  .sectionTitle { align-items: flex-start; }
+  .sectionTitle h2 { line-height: 1.2; }
+  .communityActions { gap: 9px; }
+  .communityActions > a, .communityActions > span, .communityActions form { min-height: 38px; display: inline-flex; align-items: center; }
+  .rankingLegend { gap: 12px; padding-bottom: 3px; }
+  .profileHeroActions { gap: 7px; }
+  .gamingAccountChip { flex-basis: 100%; }
+  .notificationCard form .ghostBtn { width: 100%; }
+  .reviewActions > span:first-child { width: 100%; }
+  .reviewVote { min-height: 40px; }
+}
+
+@media (max-width: 560px) {
+  .shell { width: min(100% - 16px, 1440px); }
+  .pageStack { gap: 15px; padding-bottom: 38px; }
+  .brand { font-size: 20px; }
+  .brandMark { width: 32px; height: 32px; border-radius: 10px 5px 10px 5px; }
+  .accountActions { gap: 5px; }
+  .accountActions .profilePill { width: 42px; min-width: 42px; padding: 0; }
+  .accountActions .profilePill span { display: none; }
+  .notificationPill { width: 42px; height: 42px; }
+  .pageHero.compact, .communityHero, .profileHero { padding: 24px; }
+  .pageHero.compact h1, .communityHero h1, .profileHero h1 { letter-spacing: -1.3px; }
+  .heroCard { min-height: 500px; padding: 18px; }
+  .heroContent { left: 18px; right: 18px; }
+  .heroContent p { font-size: 16px; }
+  .sectionPanel, .communityDetailPost, .gamingAccountsPanel, .gamerIdentityPanel { padding: 15px; }
+  .sectionTitle { gap: 10px; }
+  .sectionTitle > span, .sectionTitle > a { flex: 0 0 auto; }
+  .sectionTitle > div { min-width: 0; }
+  .gameGrid, .gameGrid.large { gap: 10px; }
+  .gameCardBody { padding: 12px; }
+  .gameMeta { align-items: flex-start; flex-direction: column; }
+  .statsGrid { gap: 8px; }
+  .statsGrid > div { padding: 15px 10px; }
+  .statsGrid b { font-size: 23px; }
+  .profileAvatar { width: 78px; height: 78px; font-size: 31px; }
+  .profileHeroActions > *, .profileHeroActions form { flex: 1 1 100%; }
+  .filters, .releaseFilters { margin-inline: -2px; }
+  .rankingRow { overflow: hidden; }
+  .notificationCard { padding: 13px; }
+  .gamingAccountEditor { padding: 12px; }
+  .publicGameHistoryCard, .gameHistoryEditorRow { padding: 13px; }
+  .footer { padding: 26px 0; }
+}
+
+@media (max-width: 380px) {
+  .shell { width: min(100% - 12px, 1440px); }
+  .heroCard { min-height: 530px; }
+  .heroContent h1 { font-size: 36px; }
+  .pageHero.compact, .communityHero, .profileHero { padding: 20px; }
+  .primaryBtn, .ghostBtn { padding-inline: 13px; }
+  .statsGrid, .gamerStatsGrid { grid-template-columns: 1fr; }
+  .accountActions .notificationPill { display: inline-grid; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+
+/* NIVOX v0.10.3 — correcciones de portada e iconos de plataforma */
+.heroIntro { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+.heroIntro .eyebrow, .heroIntro .heroKicker { margin: 0; }
+.heroKicker { color: #d7c9ff; font-weight: 750; }
+.heroContent { max-width: min(760px, calc(100% - 56px)); }
+.heroContent h1 { text-wrap: balance; }
+.trendRow { text-decoration: none; color: inherit; }
+.guideList > a { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center; color: inherit; text-decoration: none; }
+.brandSvg { vertical-align: middle; }
+
+@media (max-width: 1100px) {
+  .heroContent { max-width: min(820px, calc(100% - 56px)); }
+  .heroContent h1 { font-size: clamp(42px, 7vw, 64px); }
+}
+
+@media (max-width: 760px) {
+  .heroContent { max-width: none; }
+  .heroIntro { margin-bottom: 12px; }
+  .heroContent h1 { font-size: clamp(38px, 10vw, 52px); line-height: 1.01; }
+}
+
+@media (max-width: 460px) {
+  .heroIntro { align-items: flex-start; flex-direction: column; gap: 7px; }
+  .heroContent h1 { font-size: clamp(34px, 11vw, 44px); }
+}
+
+/* v0.10.4 — portadas */
+.gameCard .gameArt img { transition: transform .32s ease; }
+.gameCard:hover .gameArt img { transform: scale(1.025); }
+@media (max-width: 640px) { .gameArt { aspect-ratio: 4 / 5; } }
+
+/* NIVOX v0.11 — producción, legal, errores y portadas administradas */
+.footerGrid { grid-template-columns: 1.2fr 1fr 1.2fr; }
+.footerLegal { grid-column: 1 / -1; }
+.footerLegalLinks { justify-content: flex-end; }
+.legalPage { padding-top: 44px; padding-bottom: 54px; max-width: 900px; }
+.legalPage h1 { font-size: clamp(38px, 6vw, 64px); margin: 10px 0 18px; }
+.legalPage h2 { margin-top: 34px; }
+.legalPage p { line-height: 1.75; color: var(--muted); }
+.legalPage code { color: #d9c8ff; }
+.contactPanel { margin: 24px 0; padding: 24px; }
+.systemPage { min-height: 62vh; display: grid; place-items: center; padding: 48px 0; }
+.systemCard { max-width: 660px; text-align: center; padding: 40px; }
+.systemCard .material-symbols-rounded { color: var(--purple); }
+.systemActions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.cookieNotice { position: fixed; z-index: 120; left: 20px; right: 20px; bottom: 18px; margin: auto; max-width: 980px; background: rgba(8,16,29,.97); border: 1px solid rgba(143,91,255,.38); box-shadow: 0 16px 48px rgba(0,0,0,.45); border-radius: 16px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 18px; backdrop-filter: blur(16px); }
+.cookieNotice > div { display: flex; align-items: flex-start; gap: 10px; }
+.cookieNotice p { margin: 0; color: #c4ccda; line-height: 1.5; font-size: 14px; }
+.cookieNotice a { color: #c9adff; text-decoration: underline; }
+.adminCoverFields { display: grid; grid-template-columns: 1fr 1fr auto; gap: 16px; align-items: end; }
+.adminCoverFields small { display: block; margin-top: 7px; color: var(--muted); }
+.adminCoverPreview { width: 84px; height: 118px; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); }
+
+@media (max-width: 900px) {
+  .footerGrid { grid-template-columns: 1fr 1fr; }
+  .footerLegal { grid-column: 1 / -1; }
+  .footerLegalLinks { justify-content: flex-start; }
+  .adminCoverFields { grid-template-columns: 1fr 1fr; }
+  .adminCoverPreview { grid-column: 1 / -1; }
+}
+@media (max-width: 620px) {
+  .footerGrid, .adminCoverFields { grid-template-columns: 1fr; }
+  .cookieNotice { left: 10px; right: 10px; bottom: 10px; align-items: stretch; flex-direction: column; }
+  .cookieNotice .ghostBtn { width: 100%; justify-content: center; }
+  .systemCard { padding: 28px 20px; }
+}
+.productionChecklist { padding: 22px; }
+.productionChecklist h2 { margin: 6px 0 14px; }
+.productionChecks { display: flex; flex-wrap: wrap; gap: 8px; }
+.productionChecks span { border-radius: 999px; padding: 7px 10px; font-size: 12px; font-weight: 800; border: 1px solid var(--line); }
+.productionChecks .ok { color: #8ee7b6; border-color: rgba(67,214,131,.3); background: rgba(67,214,131,.08); }
+.productionChecks .pending { color: #ffd28a; border-color: rgba(255,184,77,.3); background: rgba(255,184,77,.08); }

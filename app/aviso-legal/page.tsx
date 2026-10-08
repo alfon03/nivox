@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import { legalConfig } from "@/lib/site";
+export const metadata: Metadata = { title: "Aviso legal", description: "Información legal del sitio NIVOX." };
+export default function Page(){ return <article className="shell legalPage"><span className="eyebrow">LEGAL</span><h1>Aviso legal</h1><p><b>Titular:</b> {legalConfig.owner}<br/><b>Email:</b> {legalConfig.email}<br/><b>Dirección:</b> {legalConfig.address}</p><p>NIVOX es un proyecto independiente sobre videojuegos. Las marcas, nombres de juegos, logotipos e imágenes de terceros pertenecen a sus respectivos titulares. La presencia de contenido editorial sobre una marca no implica afiliación, patrocinio ni aprobación.</p><p><b>Importante:</b> antes de publicar NIVOX en un dominio real, configura los datos identificativos obligatorios del titular en <code>.env.local</code> o en las variables del hosting.</p></article>; }

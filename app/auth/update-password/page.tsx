@@ -1,0 +1,4 @@
+import { updatePassword } from "@/app/auth/actions";
+export const metadata = { title: "Cambiar contraseña" };
+type Props = { searchParams: Promise<{ error?: string }> };
+export default async function Page({searchParams}:Props){ const p=await searchParams; return <div className="shell authShell"><section className="authCard panel"><span className="eyebrow">SEGURIDAD</span><h1>Nueva contraseña</h1><p className="lead">Elige una contraseña nueva para tu cuenta NIVOX.</p>{p.error&&<div className="notice error">{p.error}</div>}<form action={updatePassword} className="authForm"><label>Nueva contraseña<input name="password" type="password" minLength={8} autoComplete="new-password" required/></label><label>Repetir contraseña<input name="confirm_password" type="password" minLength={8} autoComplete="new-password" required/></label><button className="primaryBtn">Guardar contraseña</button></form></section></div>; }

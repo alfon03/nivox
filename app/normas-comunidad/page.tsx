@@ -1,0 +1,8 @@
+import Link from "next/link";
+import { MaterialIcon } from "@/components/MaterialIcon";
+
+export const metadata = { title: "Normas de la comunidad" };
+
+export default function NormasComunidadPage() {
+  return <article className="shell editorialPage"><Link className="backLink" href="/comunidad"><MaterialIcon name="arrow_back" size={17}/>Comunidad</Link><header><span className="eyebrow">CONVIVENCIA</span><h1>Normas de la comunidad</h1><p className="lead">NIVOX quiere ser un espacio útil para hablar de videojuegos sin convertir los debates en ataques personales.</p></header><div className="editorialBody"><p><strong>Respeta a los demás.</strong> No se permiten insultos, amenazas, acoso, discriminación ni lenguaje ofensivo.</p><p><strong>Publica contenido propio o autorizado.</strong> No subas imágenes, textos u otros materiales si no tienes derecho a compartirlos.</p><p><strong>Nada de spam o engaños.</strong> Evita publicidad repetitiva, enlaces maliciosos, estafas, suplantación de identidad o manipulación artificial de votos.</p><p><strong>Cuida los spoilers.</strong> Cuando una conversación revele partes importantes de una historia, indícalo claramente en el título o al comienzo del texto.</p><p><strong>Usa las denuncias con responsabilidad.</strong> Las denuncias llegan al panel de moderación y pueden terminar en contenido ocultado. Las denuncias abusivas también podrán revisarse.</p><p>Estas normas irán evolucionando a medida que crezca NIVOX. La moderación podrá retirar contenido que perjudique gravemente a la comunidad aunque un caso concreto no aparezca descrito palabra por palabra aquí.</p></div></article>;
+}
